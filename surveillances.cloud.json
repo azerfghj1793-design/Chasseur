@@ -1,0 +1,130 @@
+{
+  "sujet_ntfy": "inutilise",
+  "surveillances": [
+    {
+      "nom": "Écran OLED suivi",
+      "modeles": [
+        "AW2725DF",
+        "XG27AQWMG",
+        "271QRX",
+        "G81SF",
+        "PG27UCDM",
+        "AW2725Q",
+        "XG27ACDNG",
+        "27GS95QE",
+        "AG276QZD2",
+        "27GX704A",
+        "GO27Q24"
+      ],
+      "exclure": [
+        "switch",
+        "steam deck",
+        "smartphone",
+        "téléphone",
+        "montre",
+        "tablette",
+        "ipad",
+        "pc portable"
+      ],
+      "prix_max": 750,
+      "webhook_discord": "env:WEBHOOK_ECRANS"
+    },
+    {
+      "nom": "Écran PC OLED",
+      "tous": [
+        "oled"
+      ],
+      "exclure": [
+        "switch",
+        "steam deck",
+        "smartphone",
+        "téléphone",
+        "montre",
+        "tablette",
+        "ipad",
+        "pc portable"
+      ],
+      "prix_max": 750,
+      "groupes": [
+        [
+          "écran",
+          "ecran",
+          "moniteur"
+        ],
+        [
+          "27",
+          "68 cm",
+          "69 cm"
+        ],
+        [
+          "240hz",
+          "240 hz",
+          "360hz",
+          "360 hz"
+        ]
+      ],
+      "webhook_discord": "env:WEBHOOK_ECRANS"
+    },
+    {
+      "nom": "TV OLED suivie",
+      "modeles": [
+        "C5",
+        "C6",
+        "G5",
+        "S90F",
+        "S90H",
+        "OLED760",
+        "Z80B"
+      ],
+      "groupes": [
+        [
+          "55",
+          "oled55*",
+          "qe55*",
+          "tq55*",
+          "55oled*",
+          "tv-55*",
+          "139 cm",
+          "140 cm"
+        ]
+      ],
+      "exclure": [
+        "support",
+        "câble",
+        "cable",
+        "télécommande"
+      ],
+      "prix_max": 1100,
+      "webhook_discord": "env:WEBHOOK_TV"
+    },
+    {
+      "nom": "TV OLED",
+      "exclure": [
+        "support",
+        "câble",
+        "cable",
+        "télécommande"
+      ],
+      "prix_max": 1100,
+      "groupes": [
+        [
+          "tv",
+          "téléviseur",
+          "televiseur",
+          "oled55*"
+        ],
+        [
+          "oled",
+          "oled55*"
+        ],
+        [
+          "55",
+          "oled55*",
+          "139 cm",
+          "140 cm"
+        ]
+      ],
+      "webhook_discord": "env:WEBHOOK_TV"
+    }
+  ]
+}

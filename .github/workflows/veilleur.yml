@@ -1,0 +1,56 @@
+# Fait tourner veilleur.py chez GitHub toutes les 30 minutes, même PC éteint.
+# Les webhooks Discord sont dans les secrets du dépôt (WEBHOOK_ECRANS, WEBHOOK_TV).
+name: Veilleur Dealabs
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # GitHub peut avoir quelques minutes de retard
+  workflow_dispatch:          # bouton "Run workflow" pour lancer à la main
+
+concurrency:
+  group: veilleur
+  cancel-in-progress: false
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Europe/Paris        # pour que le résumé parte bien après 20 h, heure française
+      WEBHOOK_ECRANS: ${{ secrets.WEBHOOK_ECRANS }}
+      WEBHOOK_TV: ${{ secrets.WEBHOOK_TV }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # La mémoire du bot (deals vus, records, journal) passe d'un passage
+      # à l'autre grâce au cache.
+      - name: Récupérer la mémoire
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            deals_vus.json
+            meilleurs_prix.json
+            etat.json
+            alertes.log
+          key: memoire-${{ github.run_id }}
+          restore-keys: memoire-
+
+      - name: Lancer le veilleur
+        run: |
+          cp surveillances.cloud.json surveillances.json
+          python veilleur.py
+
+      - name: Sauver la mémoire
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            deals_vus.json
+            meilleurs_prix.json
+            etat.json
+            alertes.log
+          key: memoire-${{ github.run_id }}

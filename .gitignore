@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+surveillances.json
+deals_vus.json
+meilleurs_prix.json
+alertes.log
+etat.json
+gmail-vers-discord/passerelle.gs
+deals_vus_ancien.json
+.claude/
