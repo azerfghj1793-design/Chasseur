@@ -48,6 +48,7 @@ NAVIGATEUR = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 COULEUR_NORMAL = 0x3498DB  # bleu
 COULEUR_CHAUD = 0xE67E22   # orange
 COULEUR_BAISSE = 0x2ECC71  # vert
+COULEUR_PRIORITE = 0xE74C3C  # rouge : écran prioritaire
 
 # Pièges fréquents dans les titres Dealabs : le prix affiché n'est pas toujours
 # celui que tu paies vraiment.
@@ -221,7 +222,14 @@ def alerter(sujet: str, regle: dict, annonce: dict):
         }
         if annonce.get("image"):
             embed["thumbnail"] = {"url": annonce["image"]}
-        envoyer(regle["webhook_discord"], json.dumps({"embeds": [embed]}).encode("utf-8"),
+        message = {"embeds": [embed]}
+        if regle.get("priorite"):
+            # Écran prioritaire : rouge + mention @everyone pour que le téléphone sonne.
+            embed["color"] = COULEUR_PRIORITE
+            embed["description"] = "⭐ **ÉCRAN PRIORITAIRE SOUS TON BUDGET !**\n" + motif
+            message["content"] = "@everyone ⭐ **ALERTE PRIORITAIRE** : un de tes écrans favoris est sous " + euros(regle["prix_max"]) + " !"
+            message["allowed_mentions"] = {"parse": ["everyone"]}
+        envoyer(regle["webhook_discord"], json.dumps(message).encode("utf-8"),
                 {"Content-Type": "application/json"})
         return
 

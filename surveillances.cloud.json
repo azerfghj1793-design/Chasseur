@@ -2,6 +2,88 @@
   "sujet_ntfy": "inutilise",
   "surveillances": [
     {
+      "nom": "⭐ PRIORITÉ · MSI MAG 272QP X50",
+      "priorite": true,
+      "prix_max": 500,
+      "exclure": [
+        "switch",
+        "steam deck",
+        "smartphone",
+        "téléphone",
+        "montre",
+        "tablette",
+        "ipad",
+        "pc portable",
+        "x24",
+        "reconditionné",
+        "occasion"
+      ],
+      "webhook_discord": "env:WEBHOOK_ECRANS",
+      "modeles": [
+        "272QP"
+      ],
+      "groupes": [
+        [
+          "x50",
+          "272qpx50*"
+        ]
+      ]
+    },
+    {
+      "nom": "⭐ PRIORITÉ · Samsung Odyssey G6 G60SF",
+      "priorite": true,
+      "prix_max": 500,
+      "exclure": [
+        "switch",
+        "steam deck",
+        "smartphone",
+        "téléphone",
+        "montre",
+        "tablette",
+        "ipad",
+        "pc portable",
+        "x24",
+        "reconditionné",
+        "occasion"
+      ],
+      "webhook_discord": "env:WEBHOOK_ECRANS",
+      "modeles": [
+        "G60SF",
+        "FG602"
+      ]
+    },
+    {
+      "nom": "⭐ PRIORITÉ · Samsung Odyssey G6 500 Hz",
+      "priorite": true,
+      "prix_max": 500,
+      "exclure": [
+        "switch",
+        "steam deck",
+        "smartphone",
+        "téléphone",
+        "montre",
+        "tablette",
+        "ipad",
+        "pc portable",
+        "x24",
+        "reconditionné",
+        "occasion"
+      ],
+      "webhook_discord": "env:WEBHOOK_ECRANS",
+      "groupes": [
+        [
+          "samsung"
+        ],
+        [
+          "g6"
+        ],
+        [
+          "500hz",
+          "500 hz"
+        ]
+      ]
+    },
+    {
       "nom": "Écran OLED suivi",
       "modeles": [
         "AW2725DF",
@@ -14,7 +96,9 @@
         "27GS95QE",
         "AG276QZD2",
         "27GX704A",
-        "GO27Q24"
+        "GO27Q24",
+        "G60SF",
+        "FG602"
       ],
       "exclure": [
         "switch",
@@ -60,7 +144,9 @@
           "240hz",
           "240 hz",
           "360hz",
-          "360 hz"
+          "360 hz",
+          "500hz",
+          "500 hz"
         ]
       ],
       "webhook_discord": "env:WEBHOOK_ECRANS"
