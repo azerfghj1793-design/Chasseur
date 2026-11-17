@@ -1,5 +1,5 @@
 # Fait tourner veilleur.py chez GitHub toutes les 30 minutes, même PC éteint.
-# Les webhooks Discord sont dans les secrets du dépôt (WEBHOOK_ECRANS, WEBHOOK_TV).
+# Les webhooks Discord sont dans les secrets du dépôt (WEBHOOK_ECRANS, WEBHOOK_TV, WEBHOOK_CLAVIER, WEBHOOK_SOURIS, WEBHOOK_GENERAL).
 name: Veilleur Dealabs
 
 on:
@@ -19,6 +19,9 @@ jobs:
       TZ: Europe/Paris        # pour que le résumé parte bien après 20 h, heure française
       WEBHOOK_ECRANS: ${{ secrets.WEBHOOK_ECRANS }}
       WEBHOOK_TV: ${{ secrets.WEBHOOK_TV }}
+      WEBHOOK_CLAVIER: ${{ secrets.WEBHOOK_CLAVIER }}
+      WEBHOOK_SOURIS: ${{ secrets.WEBHOOK_SOURIS }}
+      WEBHOOK_GENERAL: ${{ secrets.WEBHOOK_GENERAL }}
     steps:
       - uses: actions/checkout@v4
 

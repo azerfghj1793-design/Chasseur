@@ -1,5 +1,5 @@
 {
-  "sujet_ntfy": "inutilise",
+  "sujet_ntfy": "theo-oled-6b18b2ff9faf443b",
   "surveillances": [
     {
       "nom": "⭐ PRIORITÉ · MSI MAG 272QP X50",
@@ -22,11 +22,8 @@
       "modeles": [
         "272QP"
       ],
-      "groupes": [
-        [
-          "x50",
-          "272qpx50*"
-        ]
+      "tous": [
+        "x50"
       ]
     },
     {
@@ -211,6 +208,239 @@
         ]
       ],
       "webhook_discord": "env:WEBHOOK_TV"
+    },
+    {
+      "nom": "⭐ PRIORITÉ · The G-Lab Keyz Elite 300 HE (ref. 89,90 € le 18/11)",
+      "priorite": true,
+      "prix_max": 89.89,
+      "webhook_discord": "env:WEBHOOK_CLAVIER",
+      "exclure": [
+        "reconditionné",
+        "occasion",
+        "tapis",
+        "repose-poignet",
+        "keycaps",
+        "switchs seuls",
+        "pack bureautique",
+        "souris",
+        "wg"
+      ],
+      "groupes": [
+        [
+          "g-lab",
+          "glab",
+          "g lab"
+        ],
+        [
+          "keyz"
+        ],
+        [
+          "300"
+        ],
+        [
+          "he",
+          "hall effect",
+          "magnétique",
+          "magnetique"
+        ]
+      ]
+    },
+    {
+      "nom": "Clavier similaire (Hall Effect / magnétique)",
+      "prix_max": 100,
+      "webhook_discord": "env:WEBHOOK_CLAVIER",
+      "exclure": [
+        "reconditionné",
+        "occasion",
+        "tapis",
+        "repose-poignet",
+        "keycaps",
+        "switchs seuls",
+        "pack bureautique",
+        "souris",
+        "keyz elite",
+        "keyz-elite"
+      ],
+      "groupes": [
+        [
+          "clavier",
+          "keyboard"
+        ],
+        [
+          "hall effect",
+          "hall-effect",
+          "magnétique",
+          "magnetique",
+          "magnetic",
+          "rapid trigger",
+          "he"
+        ]
+      ],
+      "prix_min": 40
+    },
+    {
+      "nom": "⭐ PRIORITÉ · Razer Viper V3 Pro (ref. 99,00 € le 18/11)",
+      "priorite": true,
+      "prix_max": 98.99,
+      "webhook_discord": "env:WEBHOOK_SOURIS",
+      "exclure": [
+        "reconditionné",
+        "occasion",
+        "tapis",
+        "repose-poignet",
+        "keycaps",
+        "switchs seuls",
+        "pack bureautique",
+        "clavier",
+        "hyperspeed",
+        "se",
+        "faker",
+        "dragon lore",
+        "sentinels",
+        "bundle"
+      ],
+      "groupes": [
+        [
+          "viper"
+        ],
+        [
+          "v3"
+        ],
+        [
+          "pro"
+        ]
+      ]
+    },
+    {
+      "nom": "Souris similaire (gaming sans fil légère)",
+      "prix_max": 100,
+      "webhook_discord": "env:WEBHOOK_SOURIS",
+      "exclure": [
+        "reconditionné",
+        "occasion",
+        "tapis",
+        "repose-poignet",
+        "keycaps",
+        "switchs seuls",
+        "pack bureautique",
+        "clavier"
+      ],
+      "groupes": [
+        [
+          "souris",
+          "mouse"
+        ],
+        [
+          "sans fil",
+          "wireless"
+        ],
+        [
+          "gaming",
+          "gamer",
+          "esport",
+          "e-sport",
+          "dpi",
+          "capteur",
+          "4000 hz",
+          "4k",
+          "8k",
+          "superlight",
+          "g pro",
+          "viper",
+          "deathadder",
+          "pulsar",
+          "lamzu",
+          "zowie",
+          "vaxee",
+          "darmoshark",
+          "atk",
+          "vxe"
+        ]
+      ],
+      "prix_min": 40
+    },
+    {
+      "nom": "🎁 Idée cadeau tech",
+      "prix_min": 100,
+      "prix_max": 300,
+      "webhook_discord": "env:WEBHOOK_GENERAL",
+      "exclure": [
+        "reconditionné",
+        "occasion",
+        "forfait",
+        "abonnement",
+        "smartphone",
+        "téléphone",
+        "coque",
+        "câble",
+        "cable",
+        "jeu ps5",
+        "jeu switch",
+        "moto",
+        "vélo",
+        "velo",
+        "ski",
+        "trottinette"
+      ],
+      "groupes": [
+        [
+          "clavier",
+          "souris",
+          "écran",
+          "ecran",
+          "moniteur",
+          "écouteurs",
+          "ecouteurs",
+          "airpods",
+          "buds",
+          "manette",
+          "ssd",
+          "nvme",
+          "webcam",
+          "micro",
+          "microphone",
+          "enceinte",
+          "barre de son",
+          "stream deck",
+          "carte graphique",
+          "processeur",
+          "ryzen",
+          "ram",
+          "ddr5",
+          "nas",
+          "routeur",
+          "wifi 7",
+          "steam deck",
+          "switch 2",
+          "meta quest",
+          "kindle",
+          "tablette",
+          "montre connectée",
+          "dock",
+          "chaise gaming",
+          "bureau assis-debout",
+          "lampe de bureau",
+          "boîtier pc",
+          "alimentation",
+          "ventirad",
+          "watercooling",
+          "raspberry",
+          "casque audio",
+          "casque gaming",
+          "casque sans fil",
+          "casque gamer"
+        ]
+      ]
     }
+  ],
+  "flux": [
+    "https://www.dealabs.com/rss/new",
+    "https://www.dealabs.com/rss/hot",
+    "https://www.dealabs.com/rss/groupe/tv-oled",
+    "https://www.dealabs.com/rss/groupe/ecrans",
+    "https://www.dealabs.com/rss/groupe/claviers",
+    "https://www.dealabs.com/rss/groupe/souris",
+    "https://www.dealabs.com/rss/groupe/claviers-gamer",
+    "https://www.dealabs.com/rss/groupe/souris-gamer"
   ]
 }

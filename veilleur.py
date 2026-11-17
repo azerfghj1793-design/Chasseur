@@ -169,6 +169,9 @@ def correspond(annonce: dict, regle: dict) -> bool:
     if any(contient(titre, m) for m in regle.get("exclure", [])):
         return False
     # Sans prix lisible, on garde l'annonce : mieux vaut une alerte de trop.
+    # prix_min (facultatif) : pour les idées cadeaux, on ignore ce qui est trop bon marché.
+    if annonce["prix"] is not None and annonce["prix"] < regle.get("prix_min", 0):
+        return False
     return annonce["prix"] is None or annonce["prix"] <= regle["prix_max"]
 
 
@@ -226,8 +229,8 @@ def alerter(sujet: str, regle: dict, annonce: dict):
         if regle.get("priorite"):
             # Écran prioritaire : rouge + mention @everyone pour que le téléphone sonne.
             embed["color"] = COULEUR_PRIORITE
-            embed["description"] = "⭐ **ÉCRAN PRIORITAIRE SOUS TON BUDGET !**\n" + motif
-            message["content"] = "@everyone ⭐ **ALERTE PRIORITAIRE** : un de tes écrans favoris est sous " + euros(regle["prix_max"]) + " !"
+            embed["description"] = "⭐ **PRODUIT PRIORITAIRE SOUS TON BUDGET !**\n" + motif
+            message["content"] = "@everyone ⭐ **ALERTE PRIORITAIRE** : un de tes produits favoris est sous " + euros(regle["prix_max"]) + " !"
             message["allowed_mentions"] = {"parse": ["everyone"]}
         envoyer(regle["webhook_discord"], json.dumps(message).encode("utf-8"),
                 {"Content-Type": "application/json"})
